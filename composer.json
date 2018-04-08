@@ -1,14 +1,14 @@
 {
-    "name": "liurenlin/laravel-exception-reporter",
+    "name": "maxlcoder/laravel-exception-reporter",
     "authors": [
         {
-            "name": "liurenlin",
+            "name": "maxlcoder",
             "email": "liurenlin77@gmail.com"
         }
     ],
     "require": {},
     "autoload": {
-        "psr-t": {
+        "psr-4": {
             "Maxlcoder\\ExceptionReporter\\": "src/"
         }
     },
