@@ -6,9 +6,10 @@ use Maxlcoder\ExceptionReporter\Contracts\Reporter;
 
 class MongoDBReporter implements Reporter
 {
+    private $model;
     public function __construct()
     {
-        // 组装
+        $this->model = new \Mongo();
     }
 
     public function report($params)
