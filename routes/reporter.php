@@ -1,4 +1,2 @@
 <?php
-Route::get('reporter', function () {
-    return 'test';
-});
+Route::get('reporter-log/{sn}', '\Maxlcoder\ExceptionReporter\ExceptionReporterController@show');

@@ -13,8 +13,10 @@ class CreateExceptionReporterTable extends Migration
      */
     public function up()
     {
-        Schema::create('exception_reporter', function (Blueprint $table) {
+        Schema::create('exception_log', function (Blueprint $table) {
             $table->increments('id');
+            $table->char('sn', 32);
+            $table->text('content');
             $table->timestamps();
         });
     }
@@ -26,6 +28,6 @@ class CreateExceptionReporterTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('exception_reporter');
+        Schema::dropIfExists('exception_log');
     }
 }

@@ -2,8 +2,10 @@
 
 namespace Maxlcoder\ExceptionReporter;
 
-use Maxlcoder\ExceptionReporter\Models\MongoDBReporter;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 use Maxlcoder\ExceptionReporter\Models\Reporter;
+use Exception;
 
 class ExceptionReporter
 {
@@ -14,20 +16,18 @@ class ExceptionReporter
     }
 
 
-
     /**
      * 记录错误报告
      */
-    public function report()
+    public function report(Exception $exception, Request $request)
     {
-        $this->reporter->report(request());
-    }
-
-    /**
-     * 通知
-     */
-    private function notify()
-    {
+        try {
+            $this->reporter->report($exception, $request);
+            return true;
+        } catch (Exception $exception) {
+            Log::error($exception->getMessage());
+            return false;
+        }
 
     }
 }

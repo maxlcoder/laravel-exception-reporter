@@ -8,6 +8,6 @@ class ExceptionReporter extends Facade
 {
     protected static function getFacadeAccessor()
     {
-        return 'exceptionReporter';
+        return 'ExceptionReporter';
     }
 }

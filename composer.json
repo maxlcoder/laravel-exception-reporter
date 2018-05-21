@@ -7,7 +7,6 @@
         }
     ],
     "require": {
-        "jenssegers/mongodb": "^3.4"
     },
     "autoload": {
         "classmap": [
